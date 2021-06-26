@@ -1,0 +1,114 @@
+/**** Mes Polices ****/
+@font-face {
+    font-family: "Mali Medium";
+    src: url(Font_Mali-Medium.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Mali Regular";
+    src: url(Font_Mali-Regular.ttf) format("truetype");
+}
+
+/******************* Global *******************/
+
+body {
+    background-image: url("../Images/Background_light.png");
+    background-position: top;
+    font-family: "Mali Regular", arial, sans-serif;
+}
+
+
+/***************** En-tête *****************/
+
+
+#enTete h1 {
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 20px 20px 0;
+    border: beige 1px solid;
+    box-shadow: 1px 1px 5px gray;
+    font-family: "Mali Medium", arial, sans-serif;
+    height: 50px;
+    left: 95px;
+    line-height: 50px;
+    padding-left: 15px;
+    position: absolute;
+    width: 240px;
+}
+#enTete img {
+    background-color: white;
+    border-radius: 50%;
+    border:rgb(246,	69, 85) 4px solid;
+    box-shadow: 1px 1px 5px gray;
+    height: 90px;
+    position: absolute;
+}
+
+
+/************** Présentation **************/
+
+#presentation {
+    background-image: url("../Images/Cadre_Discussion.png");
+    background-position: -137px -19px;
+    background-size: 145%;
+    height: 430px;
+    left: calc(50% - 360px);
+    position: absolute;
+    top: calc(50% - 300px);
+    width: 660px;
+}
+
+#presentation p {
+    font-size: 30px;
+    line-height: 50px;
+    margin-bottom: 59px;
+    margin-left: 158px;
+    position: relative;
+    top: 190px;
+}
+
+#presentation img {
+    filter: drop-shadow(2px 2px 5px grey);
+    float: right;
+    height: 80px;
+    position: relative;
+    right: 15px;
+    top: 97px;
+    width: 80px;
+}   #presentation img:hover {
+        filter: 
+            drop-shadow(0 0 20px rgb(240, 255, 27)) 
+            brightness(1.25);
+        height: 85px;
+        width: 85px;
+    }
+
+/******* Lien de téléchargement du CV *******/
+
+#cv {
+    bottom: 20px;
+    color: white;
+    font-family: "Mali Medium", arial, sans-serif;
+    left: 20px;
+    position: absolute;
+}
+
+#cv p {
+    font-size: 25px;
+    left: 95px;
+    position: absolute;
+    text-shadow: 1px 1px 3px gray;
+    width: 140px;
+}
+
+#cv a img {
+    bottom: 3px;
+    filter: drop-shadow(2px 2px 5px rgb(61, 61, 61));
+    float: left;
+    left: 3px;
+    position: relative;
+    width: 96%;
+}   #cv a:hover img{
+        filter: 
+            drop-shadow(0 0 20px rgb(211, 83, 55)) 
+            brightness(1.25);
+        width: 100%;
+    }
