@@ -11,7 +11,7 @@
 /******************* Global *******************/
 
 body {
-    background-image: url("../Images/Background_light.png");
+    background-image: url("../Images/Background_light.png"); 
     background-position: top;
     font-family: "Mali Regular", arial, sans-serif;
 }
@@ -63,17 +63,19 @@ body {
     margin-left: 158px;
     position: relative;
     top: 190px;
+    width: 445px;
 }
 
 #presentation img {
     filter: drop-shadow(2px 2px 5px grey);
     float: right;
     height: 80px;
-    position: relative;
+    position: absolute;
     right: 15px;
-    top: 97px;
+    top: 335px;
     width: 80px;
 }   #presentation img:hover {
+        cursor: pointer;
         filter: 
             drop-shadow(0 0 20px rgb(240, 255, 27)) 
             brightness(1.25);
@@ -107,8 +109,15 @@ body {
     position: relative;
     width: 96%;
 }   #cv a:hover img{
+        cursor: pointer;
         filter: 
             drop-shadow(0 0 20px rgb(211, 83, 55)) 
             brightness(1.25);
         width: 100%;
     }
+
+#flecheRouge {
+    height: 70px;
+    position: absolute;
+    transform : rotate(-45deg);
+}
