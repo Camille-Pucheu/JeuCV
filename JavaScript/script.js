@@ -62,5 +62,19 @@ mesElementsCibles.boutonIconDIntroduction.addEventListener('click',function(){
         document.getElementById('introduction').style.display = 'none';
         document.getElementById('flecheRouge').style.display = 'none';
         clearInterval(identifiantIntervalFlecheRouge);
+        document.getElementById('jeuDesDifferences').style.display = 'block';
     };
 });
+
+
+/* Animation du Pikachu du score */
+document.getElementById('spritePikachu').style.right = "0px";
+setInterval(function(){
+    let x = parseFloat(document.getElementById('spritePikachu').style.right);
+    if (x > 1150) {
+        x = 0;
+        document.getElementById('spritePikachu').style.right = x + 50 + "px";
+    } else {
+        document.getElementById('spritePikachu').style.right = x + 50 + "px";
+    }
+},130);
