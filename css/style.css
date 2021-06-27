@@ -19,33 +19,31 @@ body {
 
 /***************** En-tête *****************/
 
-
+#enTete h1,#enTete img{
+    box-shadow: 1px 1px 5px gray;
+    position: absolute;
+}
 #enTete h1 {
     background-color: rgb(255, 255, 255);
     border-radius: 0 20px 20px 0;
-    border: beige 1px solid;
-    box-shadow: 1px 1px 5px gray;
     font-family: "Mali Medium", arial, sans-serif;
     height: 50px;
     left: 95px;
     line-height: 50px;
     padding-left: 15px;
-    position: absolute;
     width: 240px;
 }
 #enTete img {
     background-color: white;
     border-radius: 50%;
     border:rgb(246,	69, 85) 4px solid;
-    box-shadow: 1px 1px 5px gray;
     height: 90px;
-    position: absolute;
 }
 
 
 /************** Présentation **************/
 
-#presentation {
+#introduction {
     background-image: url("../Images/Cadre_Discussion.png");
     background-position: -137px -19px;
     background-size: 145%;
@@ -56,7 +54,7 @@ body {
     width: 660px;
 }
 
-#presentation p {
+#introduction p {
     font-size: 30px;
     line-height: 50px;
     margin-bottom: 59px;
@@ -66,7 +64,7 @@ body {
     width: 445px;
 }
 
-#presentation img {
+#introduction img {
     filter: drop-shadow(2px 2px 5px grey);
     float: right;
     height: 80px;
@@ -74,7 +72,7 @@ body {
     right: 15px;
     top: 335px;
     width: 80px;
-}   #presentation img:hover {
+}   #introduction img:hover {
         cursor: pointer;
         filter: 
             drop-shadow(0 0 20px rgb(240, 255, 27)) 
@@ -85,18 +83,18 @@ body {
 
 /******* Lien de téléchargement du CV *******/
 
+#cv,#cv p,#flecheRouge{position: absolute;}
+
 #cv {
     bottom: 20px;
     color: white;
     font-family: "Mali Medium", arial, sans-serif;
     left: 20px;
-    position: absolute;
 }
 
 #cv p {
     font-size: 25px;
     left: 95px;
-    position: absolute;
     text-shadow: 1px 1px 3px gray;
     width: 140px;
 }
@@ -118,6 +116,113 @@ body {
 
 #flecheRouge {
     height: 70px;
-    position: absolute;
     transform : rotate(-45deg);
 }
+
+
+/************ Jeu des différences ************/
+
+#introduction {display: none;}
+/* Attention à désactivé juste au dessus à la fin du montage !!!!!*/
+
+#jeuDesDifferences,#jeuDesDifferences > h2,#differencesCachees,#differencesCachees>div:nth-child(1),#differencesCachees>div:nth-child(2),#differencesCachees>div:nth-child(3),#differencesCachees>div:nth-child(4),#differencesCachees>div:nth-child(5) {position: absolute}
+
+#jeuDesDifferences,#jeuDesDifferences > h2 {
+    background-color: white;
+    box-shadow: 1px 1px 5px gray;
+}
+
+#jeuDesDifferences,.imageDesDifferences {border-radius: 10px}
+
+#jeuDesDifferences {
+    border: yellow double 8px;
+    height: 506px;
+    left: calc(50% - 478px);
+    padding: 20px;
+    top: calc(50% - 278px);
+    width: 957px;
+}
+
+#jeuDesDifferences > h2{
+    border-radius: 30px;
+    border:rgb(246,	69, 85) 3px solid;
+    padding: 10px;
+    top: -73px;
+}
+
+#jeuDesDifferences>div:nth-child(2){float: left}
+#jeuDesDifferences>div:last-child,.imageDesDifferences>img{float: right}
+
+#jeuDesDifferences h3 {
+    margin-bottom: 15px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.imageDesDifferences,#differencesCachees {
+    height: 459px;
+    width: 459px;
+}
+
+.imageDesDifferences {border: yellow solid 4px;}
+
+.imageDesDifferences>img {height: 100%;}
+
+#differencesCachees {
+    bottom: 24px;
+    right: 24px;
+    z-index: 1;
+}   #differencesCachees:hover {
+        cursor: pointer;
+    }
+
+.imageDesDifferences,#differencesCachees>div:nth-child(1),#differencesCachees>div:nth-child(2),#differencesCachees>div:nth-child(3),#differencesCachees>div:nth-child(4),#differencesCachees>div:nth-child(5) {overflow: hidden}
+
+.imageDesDifferences>img,#differencesCachees>div:nth-child(1)>img,#differencesCachees>div:nth-child(2)>img,#differencesCachees>div:nth-child(3)>img,#differencesCachees>div:nth-child(4)>img,#differencesCachees>div:nth-child(5)>img {position: relative}
+
+#differencesCachees>div:nth-child(1) {
+    height: 20px;
+    left: 436px;
+    top: 423px;
+    width: 19px;
+}   #differencesCachees>div:nth-child(1)>img {
+        bottom: 1px;
+        right: 179px;
+    }
+
+#differencesCachees>div:nth-child(2) {
+    height: 18px;
+    left: 170px;
+    top: 181px;
+    width: 18px;
+}   #differencesCachees>div:nth-child(2)>img {
+        right: 31px;
+    }
+
+#differencesCachees>div:nth-child(3) {
+    height: 15px;
+    left: 316px;
+    top: 163px;
+    width: 18px;
+}   #differencesCachees>div:nth-child(3)>img {
+        bottom: 22px;
+        right: 87px;
+    }
+
+#differencesCachees>div:nth-child(4) {
+    height: 13px;
+    left: 17px;
+    top: 242px;
+    width: 16px;
+}   #differencesCachees>div:nth-child(4)>img {
+        bottom: 2px;
+    }
+
+#differencesCachees>div:nth-child(5) {
+    height: 22px;
+    left: 230px;
+    top: 291px;
+    width: 18px;
+}   #differencesCachees>div:nth-child(5)>img {
+        right: 87px;
+    }
