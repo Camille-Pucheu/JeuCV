@@ -23,8 +23,10 @@ const deplacementObjetsCachés = function (cible,valeurLeft,valeurRight) {
 };
 
 /* animations au click sur les objets cachés */
+const $etiquette = $('#etiquettes');
+
 $('#differencesCachees>div:nth-child(1)').click(function(){
-    if ($(this).css('left') != '440px') {
+    if ($(this).css('left') != '440px' && $etiquette.css('display') == 'none') {
         scoreActuel = augmenteScore();
         deplacementObjetsCachés($(this),'440px','-85px');
         balanceTonSwitch();
@@ -32,7 +34,7 @@ $('#differencesCachees>div:nth-child(1)').click(function(){
 })
 
 $('#differencesCachees>div:nth-child(2)').click(function(){
-    if ($(this).css('left') != '390px') {
+    if ($(this).css('left') != '390px' && $etiquette.css('display') == 'none') {
         scoreActuel = augmenteScore();
         deplacementObjetsCachés($(this),'390px','-50px');
         balanceTonSwitch();
@@ -40,7 +42,7 @@ $('#differencesCachees>div:nth-child(2)').click(function(){
 })
 
 $('#differencesCachees>div:nth-child(3)').click(function(){
-    if ($(this).css('left') != '381px') {
+    if ($(this).css('left') != '381px' && $etiquette.css('display') == 'none') {
         scoreActuel = augmenteScore();
         deplacementObjetsCachés($(this),'381px','-81px');
         balanceTonSwitch();
@@ -48,7 +50,7 @@ $('#differencesCachees>div:nth-child(3)').click(function(){
 })
 
 $('#differencesCachees>div:nth-child(4)').click(function(){
-    if ($(this).css('left') != '410px') {
+    if ($(this).css('left') != '410px' && $etiquette.css('display') == 'none') {
         scoreActuel = augmenteScore();
         deplacementObjetsCachés($(this),'410px','-105px');
         balanceTonSwitch();
@@ -56,12 +58,13 @@ $('#differencesCachees>div:nth-child(4)').click(function(){
 })
 
 $('#differencesCachees>div:nth-child(5)').click(function(){
-    if ($(this).css('left') != '430px') {
+    if ($(this).css('left') != '430px' && $etiquette.css('display') == 'none') {
         scoreActuel = augmenteScore();
         deplacementObjetsCachés($(this),'430px','-55px');
         balanceTonSwitch();
     }
 })
+
 
 
     /************** Gestion du score et du dévérouillage des balls **************/
@@ -70,7 +73,6 @@ $('#differencesCachees>div:nth-child(5)').click(function(){
 let scoreActuel;
 let identifiantInterval;
 const $score = $('#score span');
-const $etiquette = $('#etiquettes');
 const $paragrapheEtiquette = $('#etiquettes p');
 const $divJeuDesDifférences = $('#jeuDesDifferences');
 
@@ -197,6 +199,7 @@ const fermetureDeBall = function (indiceBall,identifiant) {
 
     /****** Gère les ouvertures/fermetures des pokeballCV ******/
 
+const $toutesLesBalls = $('#pokeballCV>div>img');
 
 for (let i=0; i < 6 ; i++) {
     const $pokeball = $('#pokeballCV>div:nth-child(' + i + ')>img');
@@ -254,6 +257,7 @@ for (let i=0; i < 6 ; i++) {
         }
     })
 }
+
 
 /* Fonctions de déplacement des étiquette à l'OUVERTURE des balls */
 const ouvertureAquali = function (){

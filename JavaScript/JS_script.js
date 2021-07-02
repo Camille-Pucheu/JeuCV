@@ -18,11 +18,6 @@ const textesIntroduction = [
     'À plus tard ! <3'
     ];
 
-const textesJeux = [
-    'Ici, rien de plus simple, clique sur l\'anomalie trouvée.',
-    'Bravo, tu as tout trouvé!',
-    ];
-
 const mesElementsCibles = {
     boutonIconDIntroduction : document.getElementById('introduction').children[1],
     zoneTextDIntroduction : document.getElementById('introduction').firstElementChild,
@@ -93,7 +88,6 @@ const deplacementFlecheVerte = function() {
     document.getElementById('flecheVerte').style.bottom = bottomFlecheVerte + (mouvementFleche/3) + "px";
 };
 
-// creationFlechRouge();creationFlechBleue();creationFlechVerte();
 
 const diminutionOpacity = function(cible) {
     let identifiant;
