@@ -12,7 +12,7 @@ let mouvementFleche = 1;
 const textesIntroduction = [
     'Viens découvrir le CV de Camille au travers d\'un petit jeu',
     'Mais si jamais le temps te manque...',
-    'Tu peux accéder au CV de Camille en bas au gauche de l\'écran',
+    'Tu peux accéder au CV de Camille en bas à gauche de l\'écran',
     'Sinon, tu pourras voir ton score en haut à droite',
     'Qui te déverrouillera des parties du CV de Camille',
     'À plus tard ! <3'
