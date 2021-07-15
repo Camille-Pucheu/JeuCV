@@ -6,7 +6,7 @@
 ************************************************************************/
 
 let compteur = 0;
-let identifiantIntervalFlecheRouge,identifiantIntervalFlecheBleue,identifiantIntervalFlecheVerte;
+let identifiantIntervalFlecheRouge,identifiantIntervalFlecheBleue,identifiantIntervalFlecheVerte,identifiantIntervalLoupe;
 let mouvementFleche = 1;
 
 const textesIntroduction = [
@@ -21,6 +21,10 @@ const textesIntroduction = [
 const mesElementsCibles = {
     boutonIconDIntroduction : document.getElementById('introduction').children[1],
     zoneTextDIntroduction : document.getElementById('introduction').firstElementChild,
+    jeuDesDifferences : document.getElementById('jeuDesDifferences'),
+    divElementsCachees : document.getElementById('differencesCachees'),
+    divLoupe : document.getElementById('pichuLoupe'),
+    score : document.getElementById('score').firstElementChild.firstElementChild.firstElementChild,
 };
 
 /********************************************************************
@@ -149,6 +153,7 @@ mesElementsCibles.boutonIconDIntroduction.addEventListener('click',function(){
         mesElementsCibles.zoneTextDIntroduction.innerHTML = 'À plus tard ! <3';
         diminutionOpacity(document.getElementById('introduction'));
         augmentationOpacity(document.getElementById('jeuDesDifferences'));
+        augmentationOpacity(mesElementsCibles.divLoupe);
     };
 });
 
@@ -164,6 +169,40 @@ setInterval(function(){
         document.getElementById('spritePikachu').style.right = x + 50 + "px";
     }
 },130);
+
+
+/*** Déplacement de la loupe ***/
+
+let largeurFenetre = window.innerWidth;
+let hauteurFenetre = window.innerHeight;
+window.addEventListener('resize', function(){
+    largeurFenetre = window.innerWidth;
+    hauteurFenetre = window.innerHeight;
+})
+
+document.addEventListener('mousemove', function(info){
+    if (mesElementsCibles.score.innerHTML == "5") {
+            mesElementsCibles.divLoupe.style.display = 'none';
+    } else {
+        if ((info.x) < ((largeurFenetre/2) + 50)) {
+            mesElementsCibles.divLoupe.style.left = ((largeurFenetre/2) + 10) + 'px';
+        } else if ((info.x) > ((largeurFenetre/2) + 480) ) {
+            mesElementsCibles.divLoupe.style.left = ((largeurFenetre/2) + 440) + 'px';
+        } else {
+            mesElementsCibles.divLoupe.style.left = (info.x - 40) + 'px';
+        }
+        if ((info.y) < ((hauteurFenetre/2) - 172)) {
+            mesElementsCibles.divLoupe.style.top = ((hauteurFenetre/2) - 212) + 'px';
+        } else if ((info.y) > ((hauteurFenetre/2) + 252)) {
+            mesElementsCibles.divLoupe.style.top = ((hauteurFenetre/2) + 217) + 'px';
+        } else {
+            mesElementsCibles.divLoupe.style.top = (info.y - 40) + 'px';
+        }
+    }
+});
+
+
+
 
 
 

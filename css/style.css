@@ -332,7 +332,6 @@ body {
     right: 24px;
     z-index: 1;
 } 
-#differencesCachees:hover {cursor: pointer}
 
 #differencesCachees>div:nth-child(1) {
     height: 20px;
@@ -382,6 +381,27 @@ body {
 #differencesCachees>div:nth-child(5)>img {
     right: 87px;
 }
+
+
+/* Placement de la loupe Pichu */
+#pichuLoupe {
+    cursor: none;
+    display: none;
+    height: 40px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 40px;
+    z-index: 1;
+}
+#pichuLoupe img {
+    filter: drop-shadow(-5px 6px 4px rgb(65, 65, 65));
+    height: 100px;
+    left: -31px;
+    position: absolute;
+    top: -33px;
+}
+
 
 /********************************************************************************************/
 /********************************* Partie CV à dévérouiller *********************************/

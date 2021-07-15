@@ -25,47 +25,69 @@ const deplacementObjetsCachés = function (cible,valeurLeft,valeurRight) {
 /* animations au click sur les objets cachés */
 const $etiquette = $('#etiquettes');
 
-$('#differencesCachees>div:nth-child(1)').click(function(){
-    if ($(this).css('left') != '440px' && $etiquette.css('display') == 'none') {
-        scoreActuel = augmenteScore();
-        deplacementObjetsCachés($(this),'440px','-85px');
-        balanceTonSwitch();
+$('#pichuLoupe').click(function(){
+    let $positionLoupeX = parseFloat($('#pichuLoupe').css("left"));
+    let $positionLoupeY = parseFloat($('#pichuLoupe').css("top"));
+    let $largeurFenetre = ($(window).width()) / 2;
+    let $hauteurFenetre = ($(window).height()) / 2;
+    const $evoli = $('#differencesCachees>div:nth-child(1)');
+    const $troncDArbre = $('#differencesCachees>div:nth-child(2)');
+    const $nenufleur = $('#differencesCachees>div:nth-child(3)');
+    const $petitePousse = $('#differencesCachees>div:nth-child(4)');
+    const $simularbre = $('#differencesCachees>div:nth-child(5)');
+    // evoli
+    if ($positionLoupeX > ($largeurFenetre + 433) && $positionLoupeX < ($largeurFenetre + 440) && $positionLoupeY < ($hauteurFenetre + 217) && $positionLoupeY > ($hauteurFenetre + 198)) {
+        if ($evoli.css('left') != '440px' && $etiquette.css('display') == 'none') {
+            scoreActuel = augmenteScore();
+            deplacementObjetsCachés($evoli,'440px','-85px');
+            balanceTonSwitch();
+        }
     }
-})
-
-$('#differencesCachees>div:nth-child(2)').click(function(){
-    if ($(this).css('left') != '390px' && $etiquette.css('display') == 'none') {
-        scoreActuel = augmenteScore();
-        deplacementObjetsCachés($(this),'390px','-50px');
-        balanceTonSwitch();
+    // tronc d'arbre 
+    if ($positionLoupeX > ($largeurFenetre + 166) && $positionLoupeX < ($largeurFenetre + 186) && $positionLoupeY < ($hauteurFenetre - 25) && $positionLoupeY > ($hauteurFenetre - 45)) {
+        if ($troncDArbre.css('left') != '390px' && $etiquette.css('display') == 'none') {
+            scoreActuel = augmenteScore();
+            deplacementObjetsCachés($troncDArbre,'390px','-50px');
+            balanceTonSwitch();
+        }        
     }
-})
-
-$('#differencesCachees>div:nth-child(3)').click(function(){
-    if ($(this).css('left') != '381px' && $etiquette.css('display') == 'none') {
-        scoreActuel = augmenteScore();
-        deplacementObjetsCachés($(this),'381px','-81px');
-        balanceTonSwitch();
+    // nénufleur
+    if ($positionLoupeX > ($largeurFenetre + 311) && $positionLoupeX < ($largeurFenetre + 331) && $positionLoupeY < ($hauteurFenetre - 45) && $positionLoupeY > ($hauteurFenetre - 65)) {
+        if ($nenufleur.css('left') != '381px' && $etiquette.css('display') == 'none') {
+            scoreActuel = augmenteScore();
+            deplacementObjetsCachés($nenufleur,'381px','-81px');
+            balanceTonSwitch();
+        }        
     }
-})
-
-$('#differencesCachees>div:nth-child(4)').click(function(){
-    if ($(this).css('left') != '410px' && $etiquette.css('display') == 'none') {
-        scoreActuel = augmenteScore();
-        deplacementObjetsCachés($(this),'410px','-105px');
-        balanceTonSwitch();
+    // petite pousse
+    if ($positionLoupeX > ($largeurFenetre + 10) && $positionLoupeX < ($largeurFenetre + 34) && $positionLoupeY < ($hauteurFenetre + 34) && $positionLoupeY > ($hauteurFenetre + 10)) {
+        if ($petitePousse.css('left') != '410px' && $etiquette.css('display') == 'none') {
+            scoreActuel = augmenteScore();
+            deplacementObjetsCachés($petitePousse,'410px','-105px');
+            balanceTonSwitch();
+        }        
     }
-})
-
-$('#differencesCachees>div:nth-child(5)').click(function(){
-    if ($(this).css('left') != '430px' && $etiquette.css('display') == 'none') {
-        scoreActuel = augmenteScore();
-        deplacementObjetsCachés($(this),'430px','-55px');
-        balanceTonSwitch();
+    // simularbre
+    if ($positionLoupeX > ($largeurFenetre + 225) && $positionLoupeX < ($largeurFenetre + 245) && $positionLoupeY < ($largeurFenetre + 84) && $positionLoupeY > ($hauteurFenetre + 68)) {
+        if ($simularbre.css('left') != '430px' && $etiquette.css('display') == 'none') {
+            scoreActuel = augmenteScore();
+            deplacementObjetsCachés($simularbre,'430px','-55px');
+            balanceTonSwitch();
+        }        
     }
+    /* Astuce des if
+    Mettre on console.log de $positionLoupeX, $positionLoupeY, $largeurFenetre, $largeurFenetre.
+    Positionner la loupe au dessus de l'objet désiré, cliquer pour receuillir les console.log et indiquer les positions comme suit:
+    objet positionné à l'intérieur de la loupe au max à DROITE désiré : 
+        console.log($positionLoupeX)-console.log($largeurFenetre) = resultat et mettre dans le if ($positionLoupeX > ($largeurFenetre + resultat))
+    objet positionné à l'intérieur de la loupe au max à GAUCHE désiré : 
+        console.log($positionLoupeX)-console.log($largeurFenetre) = resultat et mettre dans le if ($positionLoupeX < ($largeurFenetre + resultat))
+    objet positionné à l'intérieur de la loupe au max en HAUT désiré : 
+        console.log($positionLoupeX)-console.log($largeurFenetre) = resultat et mettre dans le if ($positionLoupeY < ($largeurFenetre + resultat))
+    objet positionné à l'intérieur de la loupe au max en BAS désiré : 
+        console.log($positionLoupeX)-console.log($largeurFenetre) = resultat et mettre dans le if ($positionLoupeY > ($largeurFenetre + resultat))
+    */
 })
-
-
 
     /************** Gestion du score et du dévérouillage des balls **************/
 
@@ -90,7 +112,7 @@ const affichageEtiquetteBravo = function (indiceTableau,indiceBall){
         'Bravo, tu viens de débloquer la section Expérience!',
         'Bravo, tu viens de débloquer la section Compétences!',
         'Bravo, tu viens de débloquer la section Centres d\'Intérêt!',
-        'Bravo, tu viens de finir le jeux et de débloquer la section Coordonnées!',
+        'Bravo, tu viens de finir le jeu et de débloquer la section Coordonnées!',
         ]
     $paragrapheEtiquette.html(textesScore[indiceTableau]);
     $etiquette.css('display','block');
@@ -102,6 +124,7 @@ const affichageEtiquetteBravo = function (indiceTableau,indiceBall){
 /* Fonction de déclenchement du dévérrouillage */
 const declenchementDeverrouillage = function (indiceBall) {
     $('#etiquettes img').click(function (){
+        /* le if est pour gérer la fin du jeu */
         if (indiceBall == 1) {
             $divJeuDesDifférences.css('opacity','0.75');
         } else {
@@ -155,10 +178,13 @@ const balanceTonSwitch = function() {
 }
 
 
+const $toutesLesBalls = $('.spriteBall');
+
 /* Animation d'ouverture des balls*/
 const ouvertureDeBall = function (indiceBall,identifiant) {
     const $pokeballImage = $('#pokeballCV>div:nth-child(' + indiceBall + ')>img');
     if ($pokeballImage.attr('id') == ('activee' + indiceBall)) {
+        $toutesLesBalls.addClass("unselectable");
         $pokeballImage.attr('id','enCours')
         identifiant = setInterval(function(){
             let y = parseFloat($pokeballImage.css('bottom'));
@@ -166,6 +192,7 @@ const ouvertureDeBall = function (indiceBall,identifiant) {
                 clearInterval(identifiant);
                 $pokeballImage.css('bottom','386px');
                 $pokeballImage.attr('id','ouverte' + indiceBall);
+                $toutesLesBalls.removeClass("unselectable");
             } else {
                 $pokeballImage.css('bottom', y + 128 + 'px');
             }
@@ -177,6 +204,7 @@ const ouvertureDeBall = function (indiceBall,identifiant) {
 const fermetureDeBall = function (indiceBall,identifiant) {
     const $pokeballImage = $('#pokeballCV>div:nth-child(' + indiceBall + ')>img');
     if ($pokeballImage.attr('id') == ('ouverte' + indiceBall)) {
+        $toutesLesBalls.addClass("unselectable");
         $pokeballImage.attr('id','enCours')
         $pokeballImage.css('bottom','3330px');
         identifiant = setInterval(function(){
@@ -188,6 +216,7 @@ const fermetureDeBall = function (indiceBall,identifiant) {
                     $pokeballImage.css('bottom','386px');
                 },120)
                 $pokeballImage.attr('id','activee' + indiceBall);
+                $toutesLesBalls.removeClass("unselectable");
             } else {
                 $pokeballImage.css('bottom', y - 128 + 'px');
             }
@@ -199,7 +228,6 @@ const fermetureDeBall = function (indiceBall,identifiant) {
 
     /****** Gère les ouvertures/fermetures des pokeballCV ******/
 
-const $toutesLesBalls = $('#pokeballCV>div>img');
 
 for (let i=0; i < 6 ; i++) {
     const $pokeball = $('#pokeballCV>div:nth-child(' + i + ')>img');
